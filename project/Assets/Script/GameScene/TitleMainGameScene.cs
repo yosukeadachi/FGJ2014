@@ -27,12 +27,14 @@ public class TitleMainGameScene : GameScene {
 	public override void init(){
 		Debug.Log("to Scene title");
 		initObjects (mList);
+		SoundController.PlaySoundBGM(GameSound.BgmList.TITLE);
 	}
 	/*
 	 * 更新;
 	 */
 	public override void update(){
 		if (InputManager.isTouchObject("btn_start(Clone)")) {
+			SoundController.PlaySoundSE(GameSound.SeList.GAME_START);
 			SceneController.setChangeScene(SceneController.Scene.GAME_MAIN);
 		}
 	}

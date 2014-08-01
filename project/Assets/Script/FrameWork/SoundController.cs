@@ -99,9 +99,10 @@ public class SoundController
 	 * @param	aLoop	ループ;	
 	 * @note
 	 */
-	public static void PlaySoundBGM(int aNum, bool aLoop=true)
+	public static void PlaySoundBGM(GameSound.BgmList aNum, bool aLoop=true)
 	{
-		if (mAudioSource == null || mBgmClipList[aNum] == null) return;
+		int bgmNum = (int)aNum;
+		if (mAudioSource == null || mBgmClipList[bgmNum] == null) return;
 		
 		// 再生中のサウンドがある場合停止.
 		if (mAudioSource.isPlaying) {
@@ -109,10 +110,10 @@ public class SoundController
 		}
 		
 		mAudioSource.loop = aLoop;
-		mAudioSource.clip = mBgmClipList[aNum];
+		mAudioSource.clip = mBgmClipList[bgmNum];
 		mAudioSource.Play();
 		
-		mPlayingBgmNum = aNum;
+		mPlayingBgmNum = bgmNum;
 	}
 
 	/**
@@ -120,10 +121,11 @@ public class SoundController
 	 * @param	aNum		クリップNo;
 	 * @note		単発でのみ再生可能;
 	 */
-	public static void PlaySoundSE(int aNum)
+	public static void PlaySoundSE(GameSound.SeList aNum)
 	{
-		if (mAudioSource == null || mSeClipList[aNum] == null ) return;
-		mAudioSource.PlayOneShot (mSeClipList[aNum]);
+		int seNum = (int)aNum;
+		if (mAudioSource == null || mSeClipList[seNum] == null ) return;
+		mAudioSource.PlayOneShot (mSeClipList[seNum]);
 	}
 
 	/***********************

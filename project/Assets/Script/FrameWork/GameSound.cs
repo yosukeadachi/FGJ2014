@@ -18,7 +18,7 @@ public class GameSound : MonoBehaviour
 	// サウンド情報;
 	public enum BgmList : int {
 		NON = 0,
-		RESULT_OK,
+		TITLE,
 		SOUND_MAX
 	}
 	public enum SeList : int {
@@ -26,7 +26,7 @@ public class GameSound : MonoBehaviour
 		GAME_START,
 		SOUND_MAX
 	}
-	public AudioClip bgm_result_ok;
+	public AudioClip bgm_title;
 	public AudioClip se_game_start;
 	private AudioSource mAudioSource = null;
 
@@ -43,7 +43,7 @@ public class GameSound : MonoBehaviour
 
 		// サウンドコントローラ初期化;
 		SoundController.createBgmClipList((int)BgmList.SOUND_MAX);						// BGM;
-		SoundController.setBgmClipList((int)BgmList.RESULT_OK, bgm_result_ok);
+		SoundController.setBgmClipList((int)BgmList.TITLE, bgm_title);
 
 		SoundController.createSeClipList((int)SeList.SOUND_MAX);						// SE;
 		SoundController.setSeClipList((int)SeList.GAME_START, se_game_start);

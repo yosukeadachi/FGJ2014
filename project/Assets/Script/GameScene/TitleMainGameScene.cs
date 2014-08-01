@@ -18,7 +18,7 @@ public class TitleMainGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-//		ObjectManager.eGameObjects.TITLE_BG,
+		ObjectManager.eGameObjects.BTN_START,
 	};
 
 	/*
@@ -32,9 +32,9 @@ public class TitleMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
-//		if (InputManager.isTouchObject("bg_title(Clone)")) {
-//			SceneController.setChangeScene(SceneController.Scene.GAME_RULE);
-//		}
+		if (InputManager.isTouchObject("btn_start(Clone)")) {
+			SceneController.setChangeScene(SceneController.Scene.GAME_MAIN);
+		}
 	}
 	
 	/*

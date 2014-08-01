@@ -20,11 +20,13 @@ public class SceneController : MonoBehaviour
 	{
 		NON = 0, 
 		TITLE_MAIN, 				// タイトル;
+		GAME_MAIN,					// GAME MAIN
 	}
 
 	private static GameScene[] mGameSceneList = {
 		null,
 		new TitleMainGameScene(),
+		new GameMainGameScene(),
 	};
 
 	private static Scene	mNowScene = Scene.NON;

@@ -19,6 +19,8 @@ public class ObjectManager : MonoBehaviour
 	public enum eGameObjects : int 
 	{
 		TITLE_BG = 0,
+		BTN_START,
+		BTN_END
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

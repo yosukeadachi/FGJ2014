@@ -18,7 +18,9 @@ public class ResultGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-		ObjectManager.eGameObjects.BTN_END,
+		ObjectManager.eGameObjects.RESULT_BG,
+		ObjectManager.eGameObjects.BACK_TITLE,
+		ObjectManager.eGameObjects.TWEET,
 	};
 	
 	/*
@@ -32,8 +34,12 @@ public class ResultGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
-		if(InputManager.isTouchObject("btn_end(Clone)")) {
+		if(InputManager.isTouchObject("backtitle(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
+		}
+		if(InputManager.isTouchObject("tweet(Clone)")) {
+			string message = "m走ったぜ！ 爆走ヤンキーコーチン!! #fgj2014 #fgj2014nagoya";
+			Application.OpenURL("http://twitter.com/intent/tweet?text=" + WWW.EscapeURL(message));
 		}
 	}
 	

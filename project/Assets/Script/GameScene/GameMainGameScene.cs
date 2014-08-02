@@ -23,6 +23,7 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.RANE_MANAGER,
 		ObjectManager.eGameObjects.CAR,
 		ObjectManager.eGameObjects.SCORE_WINDOW,
+		ObjectManager.eGameObjects.LIFE_WINDOW,
 	};
 
 	int timer_car_create;
@@ -43,9 +44,13 @@ public class GameMainGameScene : GameScene {
 		// update score
 		ScoreManager.setMeter(ScoreManager.getMeter()+1);
 
-		// view score
+		// display score
 		SpriteFont _font = (SpriteFont)GameObject.Find("score_window(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
 		_font.SetText("" + ScoreManager.getMeter());
+
+		// display life
+		SpriteFont _life_font = (SpriteFont)GameObject.Find("life_window(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
+		_life_font.SetText("" + Chiken.mLife);
 
 		timer_car_create += 1;
 		if(interval_car_create == timer_car_create)

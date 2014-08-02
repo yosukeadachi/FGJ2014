@@ -18,7 +18,7 @@ public class GameMainGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-		ObjectManager.eGameObjects.BTN_END,
+		ObjectManager.eGameObjects.PLAYER
 	};
 	
 	/*
@@ -32,9 +32,11 @@ public class GameMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		/*
 		if(InputManager.isTouchObject("btn_end(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
 		}
+		*/
 	}
 	
 	/*

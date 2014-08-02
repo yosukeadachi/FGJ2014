@@ -22,6 +22,8 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.PLAYER,
 		ObjectManager.eGameObjects.RANE_MANAGER,
 		ObjectManager.eGameObjects.CAR,
+		ObjectManager.eGameObjects.SCORE_WINDOW,
+		ObjectManager.eGameObjects.LIFE_WINDOW,
 	};
 
 	int timer_car_create;
@@ -39,6 +41,17 @@ public class GameMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		// update score
+		ScoreManager.setMeter(ScoreManager.getMeter()+1);
+
+		// display score
+		SpriteFont _font = (SpriteFont)GameObject.Find("score_window(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
+		_font.SetText("" + ScoreManager.getMeter());
+
+		// display life
+		SpriteFont _life_font = (SpriteFont)GameObject.Find("life_window(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
+		_life_font.SetText("" + Chiken.mLife);
+
 		timer_car_create += 1;
 		if(interval_car_create == timer_car_create)
 		{
@@ -59,5 +72,14 @@ public class GameMainGameScene : GameScene {
 	 * GUI更新;
 	 */
 	public override void onGui(){
+	}
+
+
+	public static void gameOver() {
+		GameObject[] clones = GameObject.FindGameObjectsWithTag ("Car");
+		foreach(GameObject obj in clones) {
+			GameObject.Destroy(obj);
+		}
+		SceneController.setChangeScene(SceneController.Scene.RESULT);
 	}
 }

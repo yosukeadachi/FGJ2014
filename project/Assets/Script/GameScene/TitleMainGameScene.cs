@@ -22,6 +22,8 @@ public class TitleMainGameScene : GameScene {
 		// ここに追加;
 		ObjectManager.eGameObjects.TITLE_BG,
 		ObjectManager.eGameObjects.TRACK,
+		ObjectManager.eGameObjects.TITLE_LOGO,
+		ObjectManager.eGameObjects.TOUCH_START,
 	};
 
 	/*

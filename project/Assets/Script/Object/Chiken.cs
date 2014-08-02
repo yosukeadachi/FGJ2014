@@ -78,6 +78,11 @@ public class Chiken : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+		if(!other.gameObject.tag.Equals("Car"))
+		{
+			return;
+		}
+
 		if(mInvisibleTimer == 0){
 			mInvisibleTimer = invisible_time;
 			if(mLife > 0){
@@ -85,6 +90,7 @@ public class Chiken : MonoBehaviour {
 				if(mLife == 0){
 					GameMainGameScene.gameOver();
 				}
+				other.gameObject.rigidbody2D.velocity = Vector2.right * -1 * 2.0f;
 			}
 		}
 	}

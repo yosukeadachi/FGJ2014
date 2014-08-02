@@ -19,6 +19,8 @@ public class TitleMainGameScene : GameScene {
 	 */
 	public ObjectManager.eGameObjects[] mList = {
 		ObjectManager.eGameObjects.BTN_START,
+		// ここに追加
+		ObjectManager.eGameObjects.PLAYER
 	};
 
 	/*

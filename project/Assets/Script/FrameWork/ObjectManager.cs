@@ -20,7 +20,9 @@ public class ObjectManager : MonoBehaviour
 	{
 		TITLE_BG = 0,
 		BTN_START,
-		BTN_END
+		BTN_END,
+		// ここに追加;
+		PLAYER
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

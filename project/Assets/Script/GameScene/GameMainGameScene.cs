@@ -28,6 +28,9 @@ public class GameMainGameScene : GameScene {
 
 	int timer_car_create;
 	static int interval_car_create; //per frame
+
+	public static int INTERVAL_MIN = 60;
+	public static int INTERVAL_MAX = 120;
 	/*
 	 * 初期化;
 	 */
@@ -35,7 +38,7 @@ public class GameMainGameScene : GameScene {
 		Debug.Log("to Scene game main");
 		initObjects (mList);
 		timer_car_create = 0;
-		interval_car_create = Random.Range(30, 60);
+		interval_car_create = Random.Range(INTERVAL_MIN, INTERVAL_MAX);
 	}
 	/*
 	 * 更新;
@@ -56,12 +59,11 @@ public class GameMainGameScene : GameScene {
 		if(interval_car_create == timer_car_create)
 		{
 			timer_car_create = 0;
+			interval_car_create = Random.Range (INTERVAL_MIN, INTERVAL_MAX-(ScoreManager.getMeter()/100));
 			int _current_car_pos_index = Random.Range(0, RaneManager.RANE_ARRAY_POS.Length);
 			GameObject _car_obj = (GameObject)GameObject.Instantiate(GameObject.Find("car(Clone)"));
-			_car_obj.transform.position = new Vector2(10, RaneManager.RANE_ARRAY_POS[_current_car_pos_index]);
-			float _speed = 5.0f;
-			_car_obj.rigidbody2D.velocity = Vector2.right * -1 * _speed;
-			interval_car_create = Random.Range (30, 60);
+			Car _car_sprite = (Car)_car_obj.GetComponent("Car");
+			_car_sprite.setup(Random.Range(0, RaneManager.RANE_ARRAY_POS.Length));
 		}
 		if(InputManager.isTouchObject("btn_end(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);

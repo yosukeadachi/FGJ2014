@@ -33,7 +33,7 @@ public class GameMainGameScene : GameScene {
 		Debug.Log("to Scene game main");
 		initObjects (mList);
 		timer_car_create = 0;
-		interval_car_create = 45;
+		interval_car_create = Random.Range(30, 60);
 	}
 	/*
 	 * 更新;
@@ -46,8 +46,9 @@ public class GameMainGameScene : GameScene {
 			int _current_car_pos_index = Random.Range(0, RaneManager.RANE_ARRAY_POS.Length);
 			GameObject _car_obj = (GameObject)GameObject.Instantiate(GameObject.Find("car(Clone)"));
 			_car_obj.transform.position = new Vector2(10, RaneManager.RANE_ARRAY_POS[_current_car_pos_index]);
-			float _speed = Random.Range(3.0f, 6.0f);
+			float _speed = 5.0f;
 			_car_obj.rigidbody2D.velocity = Vector2.right * -1 * _speed;
+			interval_car_create = Random.Range (30, 60);
 		}
 		if(InputManager.isTouchObject("btn_end(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);

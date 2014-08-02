@@ -99,7 +99,7 @@ public class SoundController
 	 * @param	aLoop	ループ;	
 	 * @note
 	 */
-	public static void PlaySoundBGM(GameSound.BgmList aNum, bool aLoop=true)
+	public static void PlaySoundBGM(int aNum, bool aLoop=true)
 	{
 		int bgmNum = (int)aNum;
 		if (mAudioSource == null || mBgmClipList[bgmNum] == null) return;
@@ -121,7 +121,7 @@ public class SoundController
 	 * @param	aNum		クリップNo;
 	 * @note		単発でのみ再生可能;
 	 */
-	public static void PlaySoundSE(GameSound.SeList aNum)
+	public static void PlaySoundSE(int aNum)
 	{
 		int seNum = (int)aNum;
 		if (mAudioSource == null || mSeClipList[seNum] == null ) return;

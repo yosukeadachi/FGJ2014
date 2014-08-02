@@ -1,6 +1,6 @@
 ﻿/*
  * @file;
- * @brief	ゲームシーン タイトル;
+ * @brief	result;
  * @auther	Yosuke Adachi;
  * @data	2014-07-01;
  */
@@ -13,31 +13,27 @@ using System.Collections;
 /*------------------------------------------------------------
 / タイトル ;
 /------------------------------------------------------------*/
-public class TitleMainGameScene : GameScene {
+public class ResultGameScene : GameScene {
 	/*
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-		ObjectManager.eGameObjects.BTN_START,
-		// ここに追加;
-		ObjectManager.eGameObjects.PLAYER
+		ObjectManager.eGameObjects.BTN_END,
 	};
-
+	
 	/*
 	 * 初期化;
 	 */
 	public override void init(){
-		Debug.Log("to Scene title");
+		Debug.Log("to Scene game main");
 		initObjects (mList);
-		SoundController.PlaySoundBGM((int)GameSound.BgmList.TITLE);
 	}
 	/*
 	 * 更新;
 	 */
 	public override void update(){
-		if (InputManager.isTouchObject("btn_start(Clone)")) {
-			SoundController.PlaySoundSE((int)GameSound.SeList.GAME_START);
-			SceneController.setChangeScene(SceneController.Scene.GAME_MAIN);
+		if(InputManager.isTouchObject("btn_end(Clone)")) {
+			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
 		}
 	}
 	

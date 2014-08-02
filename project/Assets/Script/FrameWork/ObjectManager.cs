@@ -32,6 +32,8 @@ public class ObjectManager : MonoBehaviour
 		LIFE_WINDOW,
 		TSURE,
 		TRACK,
+		SHIP,
+		CAMBUS,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

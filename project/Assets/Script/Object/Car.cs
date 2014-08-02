@@ -2,13 +2,16 @@
 using System.Collections;
 
 public class Car : MonoBehaviour {
-
+	public static float LIMIT_VANISH = -20.0f;
 	// Use this for initialization
 	void Start () {
-		rigidbody2D.velocity = Vector2.right * -1 * 3.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(transform.position.x < LIMIT_VANISH)
+		{
+			Object.Destroy(gameObject);
+		}
 	}
 }

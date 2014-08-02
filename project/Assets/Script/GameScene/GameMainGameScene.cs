@@ -20,14 +20,12 @@ public class GameMainGameScene : GameScene {
 	public ObjectManager.eGameObjects[] mList = {
 		ObjectManager.eGameObjects.TITLE_BG,
 		ObjectManager.eGameObjects.PLAYER,
-		ObjectManager.eGameObjects.CAR,
 		ObjectManager.eGameObjects.RANE_MANAGER,
-
+		ObjectManager.eGameObjects.CAR,
 	};
 
 	int timer_car_create = 0;
 	static int interval_car_create = 45; //per frame
-	GameObject car_obj;
 	/*
 	 * 初期化;
 	 */
@@ -36,7 +34,6 @@ public class GameMainGameScene : GameScene {
 		initObjects (mList);
 		timer_car_create = 0;
 		interval_car_create = 450;
-		car_obj = GameObject.Find("car(Clone)");
 	}
 	/*
 	 * 更新;
@@ -46,8 +43,11 @@ public class GameMainGameScene : GameScene {
 		if(interval_car_create == timer_car_create)
 		{
 			timer_car_create = 0;
-			int _current_car_pos_index = new System.Random().Next(3);
-			car_obj.transform.position = new Vector2(10, RaneManager.RANE_ARRAY_POS[_current_car_pos_index]);
+			int _current_car_pos_index = Random.Range(0, RaneManager.RANE_ARRAY_POS.Length);
+			GameObject _car_obj = (GameObject)GameObject.Instantiate(GameObject.Find("car(Clone)"));
+			_car_obj.transform.position = new Vector2(10, RaneManager.RANE_ARRAY_POS[_current_car_pos_index]);
+			float _speed = Random.Range(3.0f, 6.0f);
+			_car_obj.rigidbody2D.velocity = Vector2.right * -1 * _speed;
 		}
 		if(InputManager.isTouchObject("btn_end(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);

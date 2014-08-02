@@ -54,7 +54,7 @@ public class GameMainGameScene : GameScene {
 
 		// display life
 		SpriteFont _life_font = (SpriteFont)GameObject.Find("life_window(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
-		_life_font.SetText("" + Chiken.mLife);
+		_life_font.SetText("" + Chiken.mTsureList.Count);
 
 		timer_car_create += 1;
 		if(interval_car_create == timer_car_create)
@@ -66,9 +66,9 @@ public class GameMainGameScene : GameScene {
 			Car _car_sprite = (Car)_car_obj.GetComponent("Car");
 			_car_sprite.setup(Random.Range(0, RaneManager.RANE_ARRAY_POS.Length));
 		}
-		if(InputManager.isTouchObject("btn_end(Clone)")) {
-			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
-		}
+
+		//tsure
+
 	}
 	
 	/*

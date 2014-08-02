@@ -27,4 +27,13 @@ public class Car : MonoBehaviour {
 			Object.Destroy(gameObject);
 		}
 	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if(!other.gameObject.tag.Equals("Chiken"))
+		{
+			return;
+		}
+		rigidbody2D.velocity = Vector2.right * -1 * 2.0f;
+	}
 }

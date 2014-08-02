@@ -27,6 +27,8 @@ public class ObjectManager : MonoBehaviour
 		BACK_TITLE,
 		TWEET,
 		RESULT_BG,
+		SCORE_WINDOW,
+		SCORE_WINDOW_RESULT,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

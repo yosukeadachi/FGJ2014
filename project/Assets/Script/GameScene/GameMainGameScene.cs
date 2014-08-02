@@ -22,6 +22,7 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.PLAYER,
 		ObjectManager.eGameObjects.RANE_MANAGER,
 		ObjectManager.eGameObjects.CAR,
+		ObjectManager.eGameObjects.SCORE_WINDOW,
 	};
 
 	int timer_car_create;
@@ -39,6 +40,13 @@ public class GameMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		// update score
+		ScoreManager.setMeter(ScoreManager.getMeter()+1);
+
+		// view score
+		SpriteFont _font = (SpriteFont)GameObject.Find("score_window(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
+		_font.SetText("" + ScoreManager.getMeter());
+
 		timer_car_create += 1;
 		if(interval_car_create == timer_car_create)
 		{

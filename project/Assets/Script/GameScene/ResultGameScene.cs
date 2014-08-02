@@ -21,6 +21,7 @@ public class ResultGameScene : GameScene {
 		ObjectManager.eGameObjects.RESULT_BG,
 		ObjectManager.eGameObjects.BACK_TITLE,
 		ObjectManager.eGameObjects.TWEET,
+		ObjectManager.eGameObjects.SCORE_WINDOW_RESULT
 	};
 	
 	/*
@@ -34,6 +35,11 @@ public class ResultGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		// view score
+		SpriteFont _font = (SpriteFont)GameObject.Find("score_window_result(Clone)").transform.FindChild("SpriteFont").gameObject.GetComponent("SpriteFont");
+		_font.SetText("" + ScoreManager.getMeter());
+
+
 		if(InputManager.isTouchObject("backtitle(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
 		}

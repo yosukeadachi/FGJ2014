@@ -30,6 +30,7 @@ public class TitleMainGameScene : GameScene {
 		Debug.Log("to Scene title");
 		initObjects (mList);
 		SoundController.PlaySoundBGM((int)GameSound.BgmList.TITLE);
+		ScoreManager.setMeter(0);
 	}
 	/*
 	 * 更新;

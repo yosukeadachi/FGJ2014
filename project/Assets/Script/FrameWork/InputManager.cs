@@ -56,30 +56,6 @@ public class InputManager : MonoBehaviour
 	}
 
 	/**
-	 * @brief	タッチイベント(押したとき);
-	 * @note
-	 */
-	public void OnMouseDown()
-	{
-		// タッチをした時;
-	//	Debug.Log ("MouseDown X:"+Input.mousePosition.x+" Y:"+Input.mousePosition.y);
-		mTempMousePos[(int)TouchState.SLIDE_START] = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
-		mTouchState = TouchState.SLIDE_START;
-	}
-
-	/**
-	 * @brief	タッチイベント(離したとき);
-	 * @note
-	 */
-	public void OnMouseUp()
-	{
-		// タッチを離した時;
-	//	Debug.Log ("MouseUp X:"+Input.mousePosition.x+" Y:"+Input.mousePosition.y);
-		mTempMousePos[(int)TouchState.SLIDE_END] = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
-		mTouchState = TouchState.SLIDE_END;
-	}
-
-	/**
 	 * @brief	タッチされたか判定;
 	 * @param	aObjName	オブジェクト名;
 	 * @note
@@ -141,6 +117,17 @@ public class InputManager : MonoBehaviour
 					//	Debug.Log("hit object is " + hitObject.collider.gameObject.name);
 				}
 			}
+			// タッチをした時;
+			//	Debug.Log ("MouseDown X:"+Input.mousePosition.x+" Y:"+Input.mousePosition.y);
+			mTempMousePos[(int)TouchState.SLIDE_START] = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+			mTouchState = TouchState.SLIDE_START;
+		}
+		//
+		if (Input.GetMouseButtonUp(0)) {
+			// タッチを離した時;
+			//	Debug.Log ("MouseUp X:"+Input.mousePosition.x+" Y:"+Input.mousePosition.y);
+			mTempMousePos[(int)TouchState.SLIDE_END] = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+			mTouchState = TouchState.SLIDE_END;
 		}
 	}
 
@@ -169,4 +156,15 @@ public class InputManager : MonoBehaviour
 				break;
 		}
 	}
+
+	public static bool isSlideUp()
+	{
+		return ((mMousePos[(int)TouchState.SLIDE_END].y - mMousePos[(int)TouchState.SLIDE_START].y) > 0);
+	}
+
+	public static bool isSlideDown()
+	{
+		return ((mMousePos[(int)TouchState.SLIDE_END].y - mMousePos[(int)TouchState.SLIDE_START].y) < 0);
+	}
+
 }

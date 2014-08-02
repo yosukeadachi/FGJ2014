@@ -24,8 +24,8 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.CAR,
 	};
 
-	int timer_car_create = 0;
-	static int interval_car_create = 45; //per frame
+	int timer_car_create;
+	static int interval_car_create; //per frame
 	/*
 	 * 初期化;
 	 */
@@ -33,7 +33,7 @@ public class GameMainGameScene : GameScene {
 		Debug.Log("to Scene game main");
 		initObjects (mList);
 		timer_car_create = 0;
-		interval_car_create = 450;
+		interval_car_create = 45;
 	}
 	/*
 	 * 更新;

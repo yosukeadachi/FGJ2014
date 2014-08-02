@@ -21,6 +21,7 @@ public class TitleMainGameScene : GameScene {
 		ObjectManager.eGameObjects.BTN_START,
 		// ここに追加;
 		ObjectManager.eGameObjects.TITLE_BG,
+		ObjectManager.eGameObjects.TRACK,
 	};
 
 	/*
@@ -36,7 +37,7 @@ public class TitleMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
-		GameObject _track = GameObject.Find ("Track");
+		GameObject _track = GameObject.Find ("Track(Clone)");
 		if (InputManager.isTouchObject("btn_start(Clone)")) {
 			SoundController.PlaySoundSE((int)GameSound.SeList.GAME_START);
 			_track.rigidbody2D.velocity = Vector2.right * -1 * 10.0f;

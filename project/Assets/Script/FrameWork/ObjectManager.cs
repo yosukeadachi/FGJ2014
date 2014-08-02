@@ -30,6 +30,8 @@ public class ObjectManager : MonoBehaviour
 		SCORE_WINDOW,
 		SCORE_WINDOW_RESULT,
 		LIFE_WINDOW,
+		TSURE,
+		TRACK,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

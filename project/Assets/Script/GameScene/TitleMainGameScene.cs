@@ -36,8 +36,12 @@ public class TitleMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		GameObject _track = GameObject.Find ("Track");
 		if (InputManager.isTouchObject("btn_start(Clone)")) {
 			SoundController.PlaySoundSE((int)GameSound.SeList.GAME_START);
+			_track.rigidbody2D.velocity = Vector2.right * -1 * 10.0f;
+		}
+		if (_track.transform.position.x <  -20.0f) {
 			SceneController.setChangeScene(SceneController.Scene.GAME_MAIN);
 		}
 	}

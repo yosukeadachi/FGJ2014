@@ -21,8 +21,12 @@ public class ObjectManager : MonoBehaviour
 		TITLE_BG = 0,
 		BTN_START,
 		BTN_END,
-		// ここに追加;
-		PLAYER
+		PLAYER,
+		CAR,
+		RANE_MANAGER,
+		BACK_TITLE,
+		TWEET,
+		RESULT_BG,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShipAndCambas : MonoBehaviour {
+public class Ship : MonoBehaviour {
 	public static float START = -10.0f;
 	public static float LIMIT_VANISH_MAX = 20.0f;
 	public static float LIMIT_VANISH_MIN = -20.0f;
@@ -34,8 +34,8 @@ public class ShipAndCambas : MonoBehaviour {
 			timer_ship_create = 0;
 			interval_ship_create = Random.Range (INTERVAL_MIN, INTERVAL_MAX);
 			//int _current_car_pos_index = Random.Range(0, RaneManager.RANE_ARRAY_POS.Length);
-			GameObject _ship_obj = (GameObject)GameObject.Instantiate(GameObject.Find("ship(Clone)"));
-			ShipAndCambas _ship_sprite = (ShipAndCambas)_ship_obj.GetComponent("Ship");
+			GameObject _ship_obj = (GameObject)GameObject.Instantiate(GameObject.Find("Ship(Clone)"));
+			Ship _ship_sprite = (Ship)_ship_obj.GetComponent("Ship");
 			//_car_sprite.setup(Random.Range(0, RaneManager.RANE_ARRAY_POS.Length));
 		}
 	}

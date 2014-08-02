@@ -68,7 +68,7 @@ public class Chiken : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		SceneController.setChangeScene(SceneController.Scene.RESULT);
+		GameMainGameScene.gameOver();
 	}
 	
 	private void OnTriggerStay2D(Collider2D other)

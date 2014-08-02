@@ -60,4 +60,13 @@ public class GameMainGameScene : GameScene {
 	 */
 	public override void onGui(){
 	}
+
+
+	public static void gameOver() {
+		GameObject[] clones = GameObject.FindGameObjectsWithTag ("Car");
+		foreach(GameObject obj in clones) {
+			GameObject.Destroy(obj);
+		}
+		SceneController.setChangeScene(SceneController.Scene.RESULT);
+	}
 }

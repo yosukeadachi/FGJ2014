@@ -16,7 +16,7 @@ public class Chiken : MonoBehaviour {
 	int MAX_LIFE = 5;
 
 	public static Stack<GameObject> mTsureList;
-	float tsureSpan = -1.5f;
+	float tsureSpan = -1.3f;
 
 	// Use this for initialization
 	void Start () {

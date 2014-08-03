@@ -36,6 +36,7 @@ public class ObjectManager : MonoBehaviour
 		CAMBUS,
 		TITLE_LOGO,
 		TOUCH_START,
+		YUBI,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

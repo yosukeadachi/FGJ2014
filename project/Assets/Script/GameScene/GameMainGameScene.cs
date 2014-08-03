@@ -25,6 +25,7 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.SCORE_WINDOW,
 		ObjectManager.eGameObjects.LIFE_WINDOW,
 		ObjectManager.eGameObjects.TSURE,
+		ObjectManager.eGameObjects.YUBI,
 	};
 
 	int timer_car_create;

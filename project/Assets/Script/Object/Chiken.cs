@@ -13,9 +13,10 @@ public class Chiken : MonoBehaviour {
 	public static int invisible_time = 60;
 
 	int DEFAULT_LIFE = 3;
+	int MAX_LIFE = 5;
 
 	public static Stack<GameObject> mTsureList;
-	float tsureSpan = -2.0f;
+	float tsureSpan = -1.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,15 +28,17 @@ public class Chiken : MonoBehaviour {
 	}
 
 	public void createTsure() {
-		GameObject _tsure = (GameObject)GameObject.Instantiate(GameObject.Find("tsure(Clone)"));
-		if(mTsureList.Count == 0) {
-			_tsure.transform.position = new Vector2(transform.position.x + tsureSpan,transform.position.y);
+		if(mTsureList.Count < MAX_LIFE) {
+			GameObject _tsure = (GameObject)GameObject.Instantiate(GameObject.Find("tsure(Clone)"));
+			if(mTsureList.Count == 0) {
+				_tsure.transform.position = new Vector2(gameObject.transform.position.x + tsureSpan,transform.position.y);
+			}
+			else {
+				GameObject _peek = mTsureList.Peek ();
+				_tsure.transform.position = new Vector2(_peek.transform.position.x + tsureSpan,_peek.transform.position.y);
+			}
+			mTsureList.Push(_tsure);
 		}
-		else {
-			GameObject _peek = mTsureList.Peek ();
-			_tsure.transform.position = new Vector2(_peek.transform.position.x + tsureSpan,_peek.transform.position.y);
-		}
-		mTsureList.Push(_tsure);
 	}
 	
 	// Update is called once per frame

@@ -32,6 +32,8 @@ public class GameMainGameScene : GameScene {
 
 	public static int INTERVAL_MIN = 60;
 	public static int INTERVAL_MAX = 120;
+
+	public static int ONE_UP_SCORE = 1000;
 	/*
 	 * 初期化;
 	 */
@@ -67,8 +69,11 @@ public class GameMainGameScene : GameScene {
 			_car_sprite.setup(Random.Range(0, RaneManager.RANE_ARRAY_POS.Length));
 		}
 
-		//tsure
-
+		//update tsure
+		if((ScoreManager.getMeter() % ONE_UP_SCORE) == 0) {
+			Chiken _chiken_spr = (Chiken)GameObject.Find("Player(Clone)").GetComponent("Chiken");
+			_chiken_spr.createTsure();
+		}
 	}
 	
 	/*

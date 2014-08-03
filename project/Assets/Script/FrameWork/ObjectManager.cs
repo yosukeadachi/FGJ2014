@@ -37,6 +37,9 @@ public class ObjectManager : MonoBehaviour
 		TITLE_LOGO,
 		TOUCH_START,
 		YUBI,
+		MEIEKI_STAGE,
+		SAKAE_STAGE,
+		MEIJO_STAGE,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

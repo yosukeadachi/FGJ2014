@@ -20,10 +20,12 @@ public class TitleMainGameScene : GameScene {
 	public ObjectManager.eGameObjects[] mList = {
 		ObjectManager.eGameObjects.BTN_START,
 		// ここに追加;
-		ObjectManager.eGameObjects.TITLE_BG,
 		ObjectManager.eGameObjects.TRACK,
 		ObjectManager.eGameObjects.TITLE_LOGO,
 		ObjectManager.eGameObjects.TOUCH_START,
+		ObjectManager.eGameObjects.MEIEKI_STAGE,
+		ObjectManager.eGameObjects.SAKAE_STAGE,
+		ObjectManager.eGameObjects.MEIJO_STAGE,
 	};
 
 	/*
@@ -34,6 +36,9 @@ public class TitleMainGameScene : GameScene {
 		initObjects (mList);
 		SoundController.PlaySoundBGM((int)GameSound.BgmList.TITLE);
 		ScoreManager.setMeter(0);
+
+		StageManager.lotStage();
+		StageManager.setStage(StageManager.stage);
 	}
 	/*
 	 * 更新;

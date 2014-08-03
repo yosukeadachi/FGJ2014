@@ -18,7 +18,6 @@ public class GameMainGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-		ObjectManager.eGameObjects.TITLE_BG,
 		ObjectManager.eGameObjects.PLAYER,
 		ObjectManager.eGameObjects.RANE_MANAGER,
 		ObjectManager.eGameObjects.CAR,
@@ -26,6 +25,9 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.LIFE_WINDOW,
 		ObjectManager.eGameObjects.TSURE,
 		ObjectManager.eGameObjects.YUBI,
+		ObjectManager.eGameObjects.MEIEKI_STAGE,
+		ObjectManager.eGameObjects.SAKAE_STAGE,
+		ObjectManager.eGameObjects.MEIJO_STAGE,
 	};
 
 	int timer_car_create;
@@ -45,6 +47,9 @@ public class GameMainGameScene : GameScene {
 		interval_car_create = Random.Range(INTERVAL_MIN, INTERVAL_MAX);
 		SoundController.StopSoundBGM ((int)GameSound.BgmList.TITLE);
 		SoundController.PlaySoundBGM((int)GameSound.BgmList.PLAY);
+		StageManager.lotStage();
+		StageManager.setStage(StageManager.stage);
+
 	}
 	/*
 	 * 更新;

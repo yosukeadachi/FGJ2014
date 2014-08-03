@@ -41,6 +41,8 @@ public class TitleMainGameScene : GameScene {
 	public override void update(){
 		GameObject _track = GameObject.Find ("Track(Clone)");
 		if (InputManager.isTouchObject("btn_start(Clone)")) {
+			GameObject _obj = GameObject.Find("toach_start(Clone)");
+			GameObject.Destroy(_obj);
 			SoundController.PlaySoundSE((int)GameSound.SeList.GAME_START);
 			_track.rigidbody2D.velocity = Vector2.right * -1 * 10.0f;
 		}

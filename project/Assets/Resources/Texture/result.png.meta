@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 3df485035977e444782d43587a8d177b
+guid: 001f318e98bfc4eff985a2f5e3d56f6e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: car_big
+    21300000: result
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

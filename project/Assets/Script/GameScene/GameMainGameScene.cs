@@ -43,6 +43,8 @@ public class GameMainGameScene : GameScene {
 		initObjects (mList);
 		timer_car_create = 0;
 		interval_car_create = Random.Range(INTERVAL_MIN, INTERVAL_MAX);
+		SoundController.StopSoundBGM ((int)GameSound.BgmList.TITLE);
+		SoundController.PlaySoundBGM((int)GameSound.BgmList.PLAY);
 	}
 	/*
 	 * 更新;

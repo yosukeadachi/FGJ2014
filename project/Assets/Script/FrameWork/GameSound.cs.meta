@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: cb23fd1a4bfc744a6b8133ce49d502dc
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bgm_title: {fileID: 8300000, guid: 3a81f44d4224f4bb8b2eb94976d8608e, type: 3}
+  - se_game_start: {fileID: 8300000, guid: 0a05981513d574a2a8e4f0497ba01833, type: 3}
+  - bgm_play: {fileID: 8300000, guid: 2b188350cb43f4a48ad434b58f3171c9, type: 3}
+  - se_game_smash: {fileID: 8300000, guid: e6cf6e609e4358347bcb7182b4d3c259, type: 3}
+  - se_game_result: {fileID: 8300000, guid: 1a7c138e9e8255747999a1ce8bcfbc18, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

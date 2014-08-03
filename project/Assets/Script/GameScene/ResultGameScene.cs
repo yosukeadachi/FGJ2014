@@ -30,6 +30,8 @@ public class ResultGameScene : GameScene {
 	public override void init(){
 		Debug.Log("to Scene game main");
 		initObjects (mList);
+		SoundController.StopSoundBGM ((int)GameSound.BgmList.PLAY);
+		SoundController.PlaySoundSE ((int)GameSound.SeList.GAME_RESULT);
 	}
 	/*
 	 * 更新;

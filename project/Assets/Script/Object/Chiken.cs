@@ -124,6 +124,7 @@ public class Chiken : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+		SoundController.PlaySoundSE ((int)GameSound.SeList.GAME_SMASH);
 		if(!other.gameObject.tag.Equals("Car"))
 		{
 			return;
@@ -139,6 +140,7 @@ public class Chiken : MonoBehaviour {
 	}
 
 	public static void hitCar() {
+		SoundController.PlaySoundSE ((int)GameSound.SeList.GAME_SMASH);
 		mIsHitTrigger = true;
 	}
 }

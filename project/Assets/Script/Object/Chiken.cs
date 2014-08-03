@@ -128,7 +128,14 @@ public class Chiken : MonoBehaviour {
 		{
 			return;
 		}
-		hitCar();
+		if(mTsureList.Count == 0) {
+			hitCar();
+		}
+		else {
+			if(rigidbody2D.velocity.y != 0) {
+				rigidbody2D.velocity = new Vector2(0,rigidbody2D.velocity.y * -1);
+			}
+		}
 	}
 
 	public static void hitCar() {

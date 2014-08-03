@@ -85,8 +85,12 @@ public class GameMainGameScene : GameScene {
 
 
 	public static void gameOver() {
-		GameObject[] clones = GameObject.FindGameObjectsWithTag ("Car");
-		foreach(GameObject obj in clones) {
+		GameObject[] clones_car = GameObject.FindGameObjectsWithTag ("Car");
+		foreach(GameObject obj in clones_car) {
+			GameObject.Destroy(obj);
+		}
+		GameObject[] clonse_chicken = GameObject.FindGameObjectsWithTag("Chiken");
+		foreach(GameObject obj in clonse_chicken) {
 			GameObject.Destroy(obj);
 		}
 		SceneController.setChangeScene(SceneController.Scene.RESULT);

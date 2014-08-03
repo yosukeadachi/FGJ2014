@@ -120,6 +120,12 @@ public class Chiken : MonoBehaviour {
 		foreach(GameObject _tsure_obj in mTsureList) {
 			_tsure_obj.transform.position = new Vector2(_tsure_obj.transform.position.x, transform.position.y);
 		}
+
+		//update tsure direction
+		foreach(GameObject _tsure_obj in mTsureList) {
+			_tsure_obj.transform.localScale  = new Vector2(Mathf.Abs(_tsure_obj.transform.localScale.x), _tsure_obj.transform.localScale.y);
+		}
+		mTsureList.Peek().transform.localScale = new Vector2(Mathf.Abs(mTsureList.Peek().transform.localScale.x) * -1, mTsureList.Peek().transform.localScale.y);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

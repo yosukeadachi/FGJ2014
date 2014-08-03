@@ -44,7 +44,7 @@ public class ResultGameScene : GameScene {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
 		}
 		if(InputManager.isTouchObject("tweet(Clone)")) {
-			string message = "m走ったぜ！ 爆走ヤンキーコーチン!! #fgj2014 #fgj2014nagoya";
+			string message = "" + ScoreManager.getMeter() + "m走ったぜ！ 爆走ヤンキーコーチン!! #fgj2014 #fgj2014nagoya";
 			Application.OpenURL("http://twitter.com/intent/tweet?text=" + WWW.EscapeURL(message));
 		}
 	}

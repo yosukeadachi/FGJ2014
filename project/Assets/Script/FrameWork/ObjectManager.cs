@@ -34,6 +34,8 @@ public class ObjectManager : MonoBehaviour
 		TRACK,
 		SHIP,
 		CAMBUS,
+		TITLE_LOGO,
+		TOUCH_START,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;
